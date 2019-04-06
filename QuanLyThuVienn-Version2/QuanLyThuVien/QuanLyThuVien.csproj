@@ -143,6 +143,7 @@
     <Compile Include="TaoTaiKhoan.Designer.cs">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="testKiemTraTTNV.cs" />
     <Compile Include="thongtinmuon.cs">
       <SubType>Form</SubType>
     </Compile>

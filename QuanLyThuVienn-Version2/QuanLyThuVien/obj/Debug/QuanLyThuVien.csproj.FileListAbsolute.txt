@@ -136,7 +136,6 @@ C:\Users\Admin\Desktop\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
-C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.BCDocGia.resources
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.BCTinhTrangSach.resources
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.capnhatdocgia.resources
@@ -162,3 +161,4 @@ C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache

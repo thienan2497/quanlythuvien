@@ -12,3 +12,6 @@ C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_LOGIN\obj\Debug\TE
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_LOGIN\obj\Debug\TEST_LOGIN.csproj.CopyComplete
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_LOGIN\obj\Debug\TEST_LOGIN.dll
 C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_LOGIN\obj\Debug\TEST_LOGIN.pdb
+C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_LOGIN\bin\Debug\QuanLyThuVien.exe
+C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_LOGIN\bin\Debug\QuanLyThuVien.pdb
+C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_LOGIN\bin\Debug\QuanLyThuVien.exe.config

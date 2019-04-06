@@ -43,31 +43,33 @@ namespace QuanLyThuVien
                 TenTK = txtTenTaiKhoan.Text;
                 button2.Enabled = false;
                 Dem = 1;
-                txtMatKhau.Text = txtQuyenHan.Text = txtTenNhanVien.Text = txtDiaChi.Text = txtDienThoai.Text = txtEmail.Text = txtChucVu.Text = txtTuoi.Text = "";
+                // txtMatKhau.Text = txtQuyenHan.Text = txtTenNhanVien.Text = txtDiaChi.Text = txtDienThoai.Text = txtEmail.Text = txtChucVu.Text = txtTuoi.Text = "";
             }
             else
             {
+                TenTK = txtTenTaiKhoan.Text;
+                MessageBox.Show(TenTK);
                 button2.Enabled = true;
-                if (txtTenNhanVien.Text.Length - 1 == 0)
+                if (txtTenNhanVien.Text.Length - 1 <= 0)
                     MessageBox.Show("Không được để trống tên nhân viên");
                 else
-                    if (txtMatKhau.Text.Length - 1 == 0 || txtQuyenHan.Text.Length - 1 == 0)
+                    if (txtMatKhau.Text.Length - 1 <= 0 || txtQuyenHan.Text.Length - 1 <= 0)
                         MessageBox.Show("Không được để trống mật khẩu");
                     else
-                        if (txtQuyenHan.Text.Length - 1 == 0)
+                        if (txtQuyenHan.Text.Length - 1 <= 0)
                             MessageBox.Show("Không được để trống quyền hạn");
                         else
-                            if (txtDiaChi.Text.Length - 1 == 0)
+                            if (txtDiaChi.Text.Length - 1 <= 0)
                                 MessageBox.Show("Không được để trống địa chỉ");
                             else
-                                if (txtChucVu.Text.Length - 1 == 0)
+                                if (txtChucVu.Text.Length - 1 <= 0)
                                     MessageBox.Show("Không được để trống chức vụ");
                                 else
-                                    if (txtTuoi.Text.Length - 1 == 0)
+                                    if (txtTuoi.Text.Length - 1 <= 0)
                                         MessageBox.Show("Không được để trống tuổi");
                                     else
                                         if (txtDienThoai.Text.Length - 1 <= 0 || txtDienThoai.Text.Length - 1 > 12)
-                                            MessageBox.Show("Số điện thoại phải dài hơn 12 số và nhỏ hơn 0 số");
+                                            MessageBox.Show("Số điện thoại phải nhỏ hơn 12 số và dài hơn 0 số"); 
                                             else
                                             {
                                                 string SQL = ("update tblNhanVien set MatKhau='" + txtMatKhau.Text + "',QUYENHAN='" + txtQuyenHan.Text + "',TENNV='" + txtTenNhanVien.Text + "',DiaChi='" + txtDiaChi.Text + "',DIENTHOAI='" + txtDienThoai.Text + "',EMAIL='" + txtEmail.Text + "',ChucVu='" + txtChucVu.Text + "',Tuoi='" + txtTuoi.Text + "'where TaiKhoan='" + TenTK + "'");

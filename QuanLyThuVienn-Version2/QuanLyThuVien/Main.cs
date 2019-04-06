@@ -30,16 +30,26 @@ namespace QuanLyThuVien
             return obj;
             //Ket qua de dau ? - de trong obj
         }
+    
         private void button1_Click(object sender, EventArgs e)
         {
             TenDN = txtTenDangNhap.Text;
             MatKhau = txtMatKhau.Text;
+
+            string kt = testKiemTraTTNV.ktdangnhap(TenDN, MatKhau);
+              if (kt == "1") { MessageBox.Show("Bạn vui lòng nhập thông tin tài khoản và mật khẩu"); }
+              else if (kt == "2") { MessageBox.Show("Bạn chưa nhập tên đăng nhập"); }
+              else if (kt == "3") { MessageBox.Show("Bạn chưa nhập mật khẩu"); }
+              else if (kt == "0")
+            { 
+
+
             if (TenDN != "")
             {
                 object Q = layGiaTri("select QuyenHan from tblNhanVien where TaiKhoan='" + TenDN + "' and MatKhau='" + MatKhau + "'");
                 if (Q == null)
                 {
-                    MessageBox.Show("Sai tài khoản");
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
                 }
                 else
                 {
@@ -99,6 +109,7 @@ namespace QuanLyThuVien
                     groupBox1.Enabled = false;
                 }
             }
+        }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
