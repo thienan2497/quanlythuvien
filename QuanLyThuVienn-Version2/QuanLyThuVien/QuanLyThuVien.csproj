@@ -119,6 +119,7 @@
     <Compile Include="capnhatTG.Designer.cs">
       <DependentUpon>capnhatTG.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkInsertandUpdateBook.cs" />
     <Compile Include="checkTaoTaiKhoan.cs" />
     <Compile Include="Class\clsDatabase.cs" />
     <Compile Include="DoiMatKhau.cs">
