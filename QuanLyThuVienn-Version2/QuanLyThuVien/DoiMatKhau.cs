@@ -23,7 +23,7 @@ namespace QuanLyThuVien
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string kt = checkChangePassword.check_changepassword(txtMkCu.Text, txtMkMoi.Text, txtXNhanLaiMk.Text);
+            string kt = checkChangePassword.check_changepassword(txtMkCu.Text, txtMkMoi.Text, txtXNhanLaiMk.Text,Main.MatKhau);
             if (kt == "Mật khẩu mới quá ngắn")
                 MessageBox.Show(kt);
             else

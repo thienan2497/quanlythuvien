@@ -85,7 +85,7 @@ namespace TEST
         public void Test_Nhap_MK_Cu_Ngan()
         {
             
-            string actual = checkChangePassword.check_changepassword("123456", "1", "1");
+            string actual = checkChangePassword.check_changepassword("123456", "1", "1","123456");
             string expected = "Mật khẩu mới quá ngắn";
             Assert.AreEqual(expected, actual);
         }
@@ -93,7 +93,7 @@ namespace TEST
         public void Test_Nhap_MK_Moi_Dai()
         {
 
-            string actual = checkChangePassword.check_changepassword("123456", "123456789123456789123456789123456789", "123456789123456789123456789123456789");
+            string actual = checkChangePassword.check_changepassword("123456", "123456789123456789123456789123456789", "123456789123456789123456789123456789","123456");
             string expected = "Mật khẩu mới quá dài";
             Assert.AreEqual(expected, actual);
         }
@@ -101,10 +101,19 @@ namespace TEST
         public void Test_Nhap_MK_Moi_Khong_Trung()
         {
 
-            string actual = checkChangePassword.check_changepassword("123456", "abcdefg", "abcdef");
+            string actual = checkChangePassword.check_changepassword("123456", "abcdefg", "abcdef","1234567");
             string expected = "Mật khẩu mới không trùng";
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Test_Nhap_MK_Cu_Khong_Dung()
+        {
+
+            string actual = checkChangePassword.check_changepassword("123456", "abcdef", "abcdef", "1234567");
+            string expected = "Mật khẩu cũ sai";
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 
 
