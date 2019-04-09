@@ -48,7 +48,7 @@ namespace QuanLyThuVien
             else
             {
                 TenTK = txtTenTaiKhoan.Text;
-                MessageBox.Show(TenTK);
+              
                 button2.Enabled = true;
                 if (txtTenNhanVien.Text.Length - 1 <= 0)
                     MessageBox.Show("Không được để trống tên nhân viên");

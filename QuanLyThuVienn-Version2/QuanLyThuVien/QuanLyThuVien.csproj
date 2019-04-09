@@ -119,6 +119,7 @@
     <Compile Include="capnhatTG.Designer.cs">
       <DependentUpon>capnhatTG.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkTaoTaiKhoan.cs" />
     <Compile Include="Class\clsDatabase.cs" />
     <Compile Include="DoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -143,7 +144,8 @@
     <Compile Include="TaoTaiKhoan.Designer.cs">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="testKiemTraTTNV.cs" />
+    <Compile Include="checkKiemTraTTNV.cs" />
+    <Compile Include="checkChangePassword.cs" />
     <Compile Include="thongtinmuon.cs">
       <SubType>Form</SubType>
     </Compile>

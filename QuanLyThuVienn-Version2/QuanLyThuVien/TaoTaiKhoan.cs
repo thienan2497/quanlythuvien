@@ -23,30 +23,31 @@ namespace QuanLyThuVien
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (txtTenTK.Text.Length - 1 < 5)
+            string kt = checkTaoTaiKhoan.check_TaoTaiKhoan(txtTenTK.Text, txtMatKhau.Text, txtXNMatKhau.Text);
+            MessageBox.Show(kt);
+            if (kt == "Id too short")
                 MessageBox.Show("Tên tài khoản quá ngắn");
             else
-                if (txtTenTK.Text.Length - 1 > 30)
-                    MessageBox.Show("Tên tài khoản quá dài");
+                if (kt == "Id too long")
+                MessageBox.Show("Tên tài khoản quá dài");
                 else
-                    if (txtMatKhau.Text.Length - 1 < 5)
+                    if (kt == "Pass too short")
                         MessageBox.Show("Mật khẩu quá ngắn");
                     else
-                        if (txtXNMatKhau.Text.Length - 1 > 30)
-                            MessageBox.Show("Mật khẩu quá dài");
+                        if (kt == "Pass too long")
+                MessageBox.Show("Mật khẩu quá dài");
                         else
-                            if (txtMatKhau.Text != txtXNMatKhau.Text)
+                            if (kt == "Pass not same")
                                 MessageBox.Show("Password không trùng nhau");
                             else
-                            {
-                                try
-                                {
-                                    cls.ThucThiSQLTheoPKN("insert into tblNhanVien(TAIKHOAN,MATKHAU,QUYENHAN)values('" + txtTenTK.Text + "','" + txtMatKhau.Text + "','user')");
-                                    MessageBox.Show("Tạo tài khoản thành công hãy cập nhật thông tin cho tài khoản");
-                                }
-                                catch { MessageBox.Show("Không thể tạo được táo khoản"); }
-                            }
+                            
+                                 if (kt == "0")  
+                    // cls.ThucThiSQLTheoPKN("insert into tblNhanVien(TAIKHOAN,MATKHAU,QUYENHAN)values('" + txtTenTK.Text + "','" + txtMatKhau.Text + "','user')");
+                                      MessageBox.Show("Tạo tài khoản thành công hãy cập nhật thông tin cho tài khoản");
+                            else    
+                                if (kt == "Existed account")
+                                 MessageBox.Show("Đã tồn tại tài khoản"); 
+                            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

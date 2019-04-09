@@ -1,0 +1,2 @@
+C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_CREATE_EMP\obj\Debug\TEST_CREATE_EMP.csprojAssemblyReference.cache
+C:\Users\t\Desktop\Quanlythuvien\QuanLyThuVienn-Version2\TEST_CREATE_EMP\obj\Debug\TEST_CREATE_EMP.csproj.CoreCompileInputs.cache

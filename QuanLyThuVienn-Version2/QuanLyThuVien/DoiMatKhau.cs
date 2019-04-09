@@ -23,24 +23,25 @@ namespace QuanLyThuVien
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtMkMoi.Text.Length - 1 < 5)//kiểm tra mật khẩu mới xem co lờn hơn 6 ký tụ ko
-                MessageBox.Show("mật khẩu mới quá ngắn");
+            string kt = checkChangePassword.check_changepassword(txtMkCu.Text, txtMkMoi.Text, txtXNhanLaiMk.Text);
+            if (kt == "Mật khẩu mới quá ngắn")
+                MessageBox.Show(kt);
             else
-                if (txtMkMoi.Text.Length - 1 > 30)//kiểm tra mật khẩu mới xem có bé hơn 30 ký tụ ko
-                    MessageBox.Show("mật khẩu mới quá dài");
+                if (kt == "Mật khẩu mới quá dài")//kiểm tra mật khẩu mới xem có bé hơn 30 ký tụ ko
+                    MessageBox.Show(kt);
                 else
-                    if (txtMkMoi.Text != txtXNhanLaiMk.Text)//kiểm tra mật khẩu mới và xác nhận mk co trung nha
-                        MessageBox.Show("mật khẩu mới không trùng hãy nhập lại");
+                    if (kt == "Mật khẩu mới không trùng")//kiểm tra mật khẩu mới và xác nhận mk co trung nha
+                        MessageBox.Show(kt);
                     else
-                        if (txtMkCu.Text != Main.MatKhau)//kiểm tra mật khẩu cũ
-                            MessageBox.Show("Mật khẩu cũ sai hãy nhập lại mật khẩu");
+                        if (kt == "Mật khẩu cũ sai")//kiểm tra mật khẩu cũ
+                            MessageBox.Show(kt);
                         else
                         {
-                            try//thục hiên cau lệnh để thay đổi mật khẩu
+                            try//thực hiên cau lệnh để thay đổi mật khẩu
                             {
                                 string strUpdate = "Update tblNhanVien set MATKHAU='" + txtMkMoi.Text + "'where MATKHAU='" + txtMkCu.Text + "'";
                                 cls.ThucThiSQLTheoKetNoi(strUpdate);
-                                MessageBox.Show("đổi mật khẩu thành công");
+                                MessageBox.Show(kt);
                             }
                             catch (Exception E)
                             { MessageBox.Show("" + E.ToString()); }
