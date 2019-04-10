@@ -20,6 +20,7 @@ namespace QuanLyThuVien
         {
             cls.LoadData2DataGridView(dataGridView1,"select * from tblNhanVien where TAIKHOAN='"+Main.TenDN+"'");
         }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -39,7 +40,12 @@ namespace QuanLyThuVien
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtNHANVIEN.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtNHANVIEN.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtDiaChi.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtSoDienThoai.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
