@@ -97,7 +97,15 @@ namespace QuanLyThuVien.Class
             //Fill vào DataTable
             sqlAdap = new SqlDataAdapter(strSelect, strConnect);
             sqlAdap.Fill(dt);
+            
             dg.DataSource = dt;
+        }
+        public void LoadData2Datatable(DataTable dta, string strSelect)
+        {
+            dt.Clear();
+            //Fill vào DataTable
+            sqlAdap = new SqlDataAdapter(strSelect, strConnect);
+            sqlAdap.Fill(dta);
         }
         public void LoadData1Datagirdview(DataGridView DG, string sql,string Bang)
         {

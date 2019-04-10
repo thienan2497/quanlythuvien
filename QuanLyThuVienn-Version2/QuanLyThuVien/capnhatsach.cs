@@ -27,12 +27,14 @@ namespace QuanLyThuVien
             cls.LoadData2Combobox(cbotenTG,"Select TENTG from tblTacGia");
             cls.LoadData2Combobox(cbotenNXB,"Select TENNXB from tblNXB");
             //txtMASACH = txtTENSACH = cboMANXB.Text = cboMANXB.Text = cboMALv.Text = txtNAMXB = txtSOTRANG = txtSOLUONG = maskedTextBox1 = richTextBox1 = txtsachhong.Text = "ac";
-            txtMASACH.Text = txtTENSACH.Text = cboMANXB.Text = cboMANXB.Text = cboMALv.Text = txtNAMXB.Text = txtSOTRANG.Text = txtSOLUONG.Text = maskedTextBox1.Text = txtsachhong.Text = "";
+            //txtMASACH.Text = txtTENSACH.Text = cboMANXB.Text = cboMANXB.Text = cboMALv.Text = txtNAMXB.Text = txtSOTRANG.Text = txtSOLUONG.Text = maskedTextBox1.Text = txtsachhong.Text = "";
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            //string kt = checkInsertandUpdateBook.check_insertBook(txtMASACH.Text, txtTENSACH.Text, cboMATG.Text, cboMANXB.Text, cboMALv.Text, txtNAMXB.Text, txtSOTRANG.Text, txtSOLUONG.Text, maskedTextBox1.Text, richTextBox1.Text, txtsachhong.Text);
+
+            //MessageBox.Show(kt);
             try
             {
                 string strInsert = "Insert Into tblSach(MASACH,TENSACH,MATG,MANXB,MALv,NAMXB,SOTRANG,SOLUONG,NGAYNHAP,GHICHU,SOSACHHONG) values ('" + txtMASACH.Text + "','" + txtTENSACH.Text + "','" + cboMATG.Text + "','" + cboMANXB.Text + "','" + cboMALv.Text + "','" + txtNAMXB.Text + "','" + txtSOTRANG.Text + "','" + txtSOLUONG.Text + "','" + maskedTextBox1.Text + "','" + richTextBox1.Text + "','" + txtsachhong.Text + "')";
