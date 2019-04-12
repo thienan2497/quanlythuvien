@@ -122,6 +122,7 @@
     <Compile Include="checkInsertandUpdateBook.cs" />
     <Compile Include="checkTaoTaiKhoan.cs" />
     <Compile Include="Class\clsDatabase.cs" />
+    <Compile Include="CheckDate.cs" />
     <Compile Include="DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +140,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Search.cs" />
     <Compile Include="TaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
