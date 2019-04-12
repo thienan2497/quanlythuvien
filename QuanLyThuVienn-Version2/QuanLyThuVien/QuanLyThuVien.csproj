@@ -147,7 +147,7 @@
     <Compile Include="TaoTaiKhoan.Designer.cs">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="checkKiemTraTTNV.cs" />
+    <Compile Include="checkKiemTraDangNhap.cs" />
     <Compile Include="checkChangePassword.cs" />
     <Compile Include="thongtinmuon.cs">
       <SubType>Form</SubType>
