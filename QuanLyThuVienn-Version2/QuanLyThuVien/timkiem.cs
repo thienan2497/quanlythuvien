@@ -93,12 +93,11 @@ namespace QuanLyThuVien
             }
             else
             {
-                MessageBox.Show(comboBox1.SelectedItem.ToString());
                 //string sMsk = textBox1.Mask;
                 textBox1.Mask = "";
                 textBox1.Text = "";
                 //textBox1.KeyUp += new KeyEventHandler(msDate_KeyUp3);
-                MessageBox.Show(textBox1.Mask);
+                
                 // textBox1.Mask = sMsk;
             }
 

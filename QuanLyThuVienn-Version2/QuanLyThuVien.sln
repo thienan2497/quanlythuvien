@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThuVien", "QuanLyThuVien\QuanLyThuVien.csproj", "{9F0AEF46-BEC4-4D66-B7CE-BE25EBEB7D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST_LOGIN", "TEST_LOGIN\TEST_LOGIN.csproj", "{CC5B6994-15C0-4AC2-BC9C-BBDBD68C02F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIT_TEST", "TEST_LOGIN\UNIT_TEST.csproj", "{CC5B6994-15C0-4AC2-BC9C-BBDBD68C02F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

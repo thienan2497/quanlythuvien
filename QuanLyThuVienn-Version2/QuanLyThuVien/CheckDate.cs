@@ -36,6 +36,7 @@ namespace QuanLyThuVien
                 test.Text = text;
                 if (test.MaskFull)
                 {
+                   
                     try
                     {
                         DateTime.ParseExact(test.Text, "yyyy", null);

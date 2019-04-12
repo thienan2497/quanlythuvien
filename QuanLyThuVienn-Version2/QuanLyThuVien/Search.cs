@@ -13,7 +13,7 @@ namespace QuanLyThuVien
         {
 
             string d;
-            d = " select * from tblSach";
+            d = "select * from tblSach";
             if (cbbox == "TENSACH")
             {
                 if (txtbox.Length - 1 > 50)
@@ -78,7 +78,7 @@ namespace QuanLyThuVien
                 if (date.Check_Year(txtbox) == "Năm không hợp lệ")
                 {
                     MessageBox.Show("Năm không hợp lệ");
-                    return " select * from tblSach";
+                    return "select * from tblSach";
                 }
                 else
                 {
@@ -89,7 +89,7 @@ namespace QuanLyThuVien
             else if (cbbox == "NGAYNHAP")
             {
                 CheckDate date = new CheckDate();
-                if (date.Check_Year(txtbox) == "Ngày không hợp lệ")
+                if (date.Check_Date(txtbox) == "Ngày không hợp lệ")
                 {
                     MessageBox.Show("Ngày không hợp lệ");
                     return "select * from tblSach";
