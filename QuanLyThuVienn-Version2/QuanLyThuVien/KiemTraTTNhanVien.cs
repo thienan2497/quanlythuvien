@@ -72,7 +72,9 @@ namespace QuanLyThuVien
         private void button2_Click(object sender, EventArgs e)
         {
             string s = txtTenNhanVien.Text;
-            if (txtQuyenHan.Text == "admin")
+            
+
+            if (checkThongTinNhanVien.check_delete_emp(txtQuyenHan.Text,txtTenTaiKhoan.Text) != "0")
                 MessageBox.Show("Không thể xóa tài khoản admin");
             else
                 if (MessageBox.Show("Bạn có chắc chắn xóa thông tin nhân viên "+s,"Thông Báo Xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
