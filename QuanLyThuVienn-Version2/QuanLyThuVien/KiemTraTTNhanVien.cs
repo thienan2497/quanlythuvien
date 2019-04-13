@@ -48,35 +48,24 @@ namespace QuanLyThuVien
             else
             {
                 TenTK = txtTenTaiKhoan.Text;
-              
-                button2.Enabled = true;
-                if (txtTenNhanVien.Text.Length - 1 <= 0)
-                    MessageBox.Show("Không được để trống tên nhân viên");
-                else
-                    if (txtMatKhau.Text.Length - 1 <= 0 || txtQuyenHan.Text.Length - 1 <= 0)
-                        MessageBox.Show("Không được để trống mật khẩu");
-                    else
-                        if (txtQuyenHan.Text.Length - 1 <= 0)
-                            MessageBox.Show("Không được để trống quyền hạn");
-                        else
-                            if (txtDiaChi.Text.Length - 1 <= 0)
-                                MessageBox.Show("Không được để trống địa chỉ");
-                            else
-                                if (txtChucVu.Text.Length - 1 <= 0)
-                                    MessageBox.Show("Không được để trống chức vụ");
-                                else
-                                    if (txtTuoi.Text.Length - 1 <= 0)
-                                        MessageBox.Show("Không được để trống tuổi");
-                                    else
-                                        if (txtDienThoai.Text.Length - 1 <= 0 || txtDienThoai.Text.Length - 1 > 12)
-                                            MessageBox.Show("Số điện thoại phải nhỏ hơn 12 số và dài hơn 0 số"); 
-                                            else
-                                            {
-                                                string SQL = ("update tblNhanVien set MatKhau='" + txtMatKhau.Text + "',QUYENHAN='" + txtQuyenHan.Text + "',TENNV='" + txtTenNhanVien.Text + "',DiaChi='" + txtDiaChi.Text + "',DIENTHOAI='" + txtDienThoai.Text + "',EMAIL='" + txtEmail.Text + "',ChucVu='" + txtChucVu.Text + "',Tuoi='" + txtTuoi.Text + "'where TaiKhoan='" + TenTK + "'");
-                                                cls.ThucThiSQLTheoKetNoi(SQL);
-                                                cls.LoadData2DataGridView(dataGridView1, "select*from tblNhanVien");
-                                                MessageBox.Show("Đã Sửa thành công");
-                                            }
+                try
+                {
+                    var tuoi_n = int.Parse(txtTuoi.Text);
+                    string kt = checkThongTinNhanVien.check_update_emp(txtTenNhanVien.Text, txtMatKhau.Text, txtQuyenHan.Text, txtDiaChi.Text, txtChucVu.Text, tuoi_n, txtDienThoai.Text);
+                    button2.Enabled = true;
+                    if (kt == "0")
+                    {
+                        string SQL = ("update tblNhanVien set MatKhau='" + txtMatKhau.Text + "',QUYENHAN='" + txtQuyenHan.Text + "',TENNV='" + txtTenNhanVien.Text + "',DiaChi='" + txtDiaChi.Text + "',DIENTHOAI='" + txtDienThoai.Text + "',EMAIL='" + txtEmail.Text + "',ChucVu='" + txtChucVu.Text + "',Tuoi='" + txtTuoi.Text + "'where TaiKhoan='" + TenTK + "'");
+                        cls.ThucThiSQLTheoKetNoi(SQL);
+                        cls.LoadData2DataGridView(dataGridView1, "select*from tblNhanVien");
+                        MessageBox.Show("Đã sửa thành công");
+                    }
+                    else MessageBox.Show(kt);
+                }
+                catch { Exception ex;
+                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
+                }
+               
             }
         }
 
@@ -99,6 +88,18 @@ namespace QuanLyThuVien
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtTuoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

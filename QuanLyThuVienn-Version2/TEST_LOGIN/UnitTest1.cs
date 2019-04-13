@@ -271,7 +271,7 @@ namespace TEST
         [TestMethod]
         public void Test_Nhap_Dung_Thong_Tin_Tim_Kiem()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "MASACH";
             string txtbox = "S02";
             string actual = test_search.search_1(cbbox, txtbox);
@@ -283,7 +283,7 @@ namespace TEST
         [TestMethod]
         public void Test_Nhap_Dung_Thong_Tin_Tim_Kiem_2()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "MaLv";
             string txtbox = "LV01";
             string actual = test_search.search_1(cbbox, txtbox);
@@ -295,7 +295,7 @@ namespace TEST
         [TestMethod]
         public void Test_Bo_Trong_ComboBox_Bo_Trong_Thong_Tin()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "";
             string txtbox = "";
             string actual = test_search.search_1(cbbox, txtbox);
@@ -306,7 +306,7 @@ namespace TEST
         [TestMethod]
         public void Test_Chon_ComboBox_Bo_Trong_Thong_Tin()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "MASACH";
             string txtbox = "";
             string actual = test_search.search_1(cbbox, txtbox);
@@ -316,7 +316,7 @@ namespace TEST
         [TestMethod]
         public void Test_Chon_ComboBox_Bo_Trong_Thong_Tin_2()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "TENSACH";
             string txtbox = "";
             string actual = test_search.search_1(cbbox, txtbox);
@@ -326,7 +326,7 @@ namespace TEST
         [TestMethod]
         public void Test_Chon_ComboBox_Nhap_Thong_Tin_Qua_Dai()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "MATG";
             string txtbox = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";//31 ky tu
             string actual = test_search.search_1(cbbox, txtbox);
@@ -336,7 +336,7 @@ namespace TEST
         [TestMethod]
         public void Test_Chon_ComboBox_Nhap_Thong_Tin_Qua_Dai_2()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "MANXB";
             string txtbox = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";//31 ky tu
             string actual = test_search.search_1(cbbox, txtbox);
@@ -346,7 +346,7 @@ namespace TEST
         [TestMethod]
         public void Test_Nhap_sai_dinh_dang_nam()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "NAMXB";
             string txtbox = "aaaa";//31 ky tu
 
@@ -363,7 +363,7 @@ namespace TEST
         [TestMethod]
         public void Test_Nhap_sai_dinh_dang_ngay()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "NGAYNHAP";
             string txtbox = "30/02/2019";//31 ky tu
 
@@ -384,7 +384,7 @@ namespace TEST
         [TestMethod]
         public void Test_Nhap_Dung_Thong_Tin_Tim_Kiem()
         {
-            Search test_search = new Search();
+            Search_Book test_search = new Search_Book();
             string cbbox = "MASACH";
             string txtbox = "S02";
             string actual = test_search.search_1(cbbox, txtbox);
