@@ -529,6 +529,24 @@ namespace TEST
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Test_Quyen_Xoa_Nhan_Vien()
+        {
+            string expected = checkThongTinNhanVien.check_delete_emp("admin", "an");
+            string actual = "0";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Quyen_Xoa_Nhan_Vien_2()
+        {
+            string expected = checkThongTinNhanVien.check_delete_emp("user", "xuyentb");
+            string actual = "Không thể xóa tài khoản admin";
+
+            Assert.AreEqual(expected, actual);
+        }
+
 
 
 
