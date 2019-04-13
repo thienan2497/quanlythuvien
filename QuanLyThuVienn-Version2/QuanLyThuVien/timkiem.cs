@@ -149,7 +149,7 @@ namespace QuanLyThuVien
         }*/
         private void button1_Click(object sender, EventArgs e)
         {
-            Search sea = new Search();
+            Search_Book sea = new Search_Book();
             string cbbox = comboBox1.Text;
             string txtbox = textBox1.Text;
             

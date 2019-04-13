@@ -26,7 +26,21 @@ namespace QuanLyThuVien
             else if ((tuoi > 120) || (tuoi <7))
             { return "Độ tuổi phải trong khoảng 7 đến 120"; }
             return "0";
-
+        }
+        public static bool update_database(string ten, string diachi, string sdt, string email, string chucvu, int tuoi)
+        {
+            try
+            {
+                Class.clsDatabase cls = new QuanLyThuVien.Class.clsDatabase();
+                cls.KetNoi();
+                string strUpdate = "update tblNhanVien set TENNV='" + ten + "',DIACHI='" + diachi + "',DIENTHOAI='" + sdt + "',EMAIL='" + email + "',ChucVu='" + chucvu + "',Tuoi='" + tuoi + "' where TAIKHOAN='an'";
+                cls.ThucThiSQLTheoKetNoi(strUpdate);
+                //cls.ThucThiSQLTheoPKN("delete tblNhanVien where id = '" + id+"'");
+                return true;
+            }
+            catch { Exception ex;
+                return false;
+            };
         }
     }
 }

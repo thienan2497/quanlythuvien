@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Data;
 namespace QuanLyThuVien
 {
-    public class Search
+    public class Search_Book
     {
         Class.clsDatabase cls = new QuanLyThuVien.Class.clsDatabase();
         public string search_1(string cbbox, string txtbox)

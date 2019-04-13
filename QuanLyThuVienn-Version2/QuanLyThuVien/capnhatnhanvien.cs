@@ -26,17 +26,10 @@ namespace QuanLyThuVien
         {
             var tuoi_n = int.Parse(textBox2.Text);
             if (check_Update_emp.check_update_employee(txtNHANVIEN.Text, txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, textBox1.Text, tuoi_n) == "0")
-            {
-                if (txtSoDienThoai.Text.Length - 1 <= 0)
-                    MessageBox.Show("Số điện thoại không thể nhỏ hơn 0 số");
-                else
-            if (txtSoDienThoai.Text.Length - 1 > 12)
-                    MessageBox.Show("Số điện thoại không thể lớn hơn 12 số");
-                else
-                {
+            {              
                     string strUpdate = "update tblNhanVien set TENNV='" + txtNHANVIEN.Text + "',DIACHI='" + txtDiaChi.Text + "',DIENTHOAI='" + txtSoDienThoai.Text + "',EMAIL='" + txtEmail.Text + "',ChucVu='" + textBox1.Text + "',Tuoi='" + textBox2.Text + "' where TAIKHOAN='" + Main.TenDN + "'";
                     cls.ThucThiSQLTheoKetNoi(strUpdate);
-                }
+               
                 cls.LoadData2DataGridView(dataGridView1, "select * from tblNhanVien where TAIKHOAN='" + Main.TenDN + "'");
                 MessageBox.Show("Sửa thành công");
             }
@@ -75,5 +68,7 @@ namespace QuanLyThuVien
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        
     }
 }

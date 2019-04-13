@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using QuanLyThuVien;
+using System.Windows.Forms;
+
 
 
 
@@ -9,7 +11,7 @@ namespace TEST
     [TestClass]
     public class test_login
 
-    {       
+    {
         [TestMethod]
         public void Test_Nhap_Dung_Tai_Khoan()
         {
@@ -138,8 +140,8 @@ namespace TEST
         [TestMethod]
         public void Test_Nhap_MK_Moi_Ngan()
         {
-            
-            string actual = checkChangePassword.check_changepassword("123456", "1", "1","123456");
+
+            string actual = checkChangePassword.check_changepassword("123456", "1", "1", "123456");
             string expected = "Mật khẩu mới quá ngắn";
             Assert.AreEqual(expected, actual);
         }
@@ -147,7 +149,7 @@ namespace TEST
         public void Test_Nhap_MK_Moi_Dai()
         {
 
-            string actual = checkChangePassword.check_changepassword("123456", "123456789123456789123456789123456789", "123456789123456789123456789123456789","123456");
+            string actual = checkChangePassword.check_changepassword("123456", "123456789123456789123456789123456789", "123456789123456789123456789123456789", "123456");
             string expected = "Mật khẩu mới quá dài";
             Assert.AreEqual(expected, actual);
         }
@@ -155,7 +157,7 @@ namespace TEST
         public void Test_Nhap_MK_Moi_Khong_Trung()
         {
 
-            string actual = checkChangePassword.check_changepassword("123456", "abcdefg", "abcdef","1234567");
+            string actual = checkChangePassword.check_changepassword("123456", "abcdefg", "abcdef", "1234567");
             string expected = "Mật khẩu mới không trùng";
             Assert.AreEqual(expected, actual);
         }
@@ -180,16 +182,91 @@ namespace TEST
 
 
     }
-
     [TestClass]
     public class test_update_emp
     {
+        [TestMethod]
+        public void Test_Nhap_Dung_Du_Lieu()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An", "88/1 Dao Duy Anh", "0708339999", "thienan@gmail.com", "Trum cuoi", 99);
+            string expected = "0";
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Test_Nhap_Dung_Du_Lieu_Va_Kiem_Tra_Database()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An", "88/1 Dao Duy Anh", "0708339999", "thienan@gmail.com", "Trum cuoi", 12);
+            if (actual == "0")
+            {
+
+                bool actual2 = check_Update_emp.update_database("Thien An", "88/1 Dao Duy Anh", "0708339999", "thienan@gmail.com", "Trum cuoi", 12);
+                bool expected2 = true;
+                Assert.AreEqual(actual2, expected2);
+            }
+            else Assert.Fail();
+        }
+        [TestMethod]
+        public void Test_Nhap_Ten_Dai()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An Thien An Thien An Thien An Thien An Thien An", "88/1 Dao Duy Anh", "0708339999", "thienan@gmail.com", "Trum cuoi", 12);
+            string expected = "Tên nhân viên quá dài";
+            Assert.AreEqual(actual, expected);
+
+        }
+
+        [TestMethod]
+        public void Test_Nhap_Ten_Ngan()
+        {
+            string actual = check_Update_emp.check_update_employee("", "88/1 Dao Duy Anh", "0708339999", "thienan@gmail.com", "Trum cuoi", 12);
+            string expected = "Tên nhân viên quá ngắn";
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void Test_Dia_Chi_Qua_Dai()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An", "88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh 88/1 Dao Duy Anh ", "0708339999", "thienan@gmail.com", "Trum cuoi", 12);
+            string expected = "Địa chỉ quá dài";
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void Test_SDT_Khong_Du_10_So()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An", "88/1 Dao Duy Anh", "07083399991", "thienan@gmail.com", "Trum cuoi", 99);
+            string expected = "Số điện thoại phải có 10 số";
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Test_SDT_Khong_Du_10_So_2()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An", "88/1 Dao Duy Anh", "070833999", "thienan@gmail.com", "Trum cuoi", 99);
+            string expected = "Số điện thoại phải có 10 số";
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Test_Tuoi_Nho_Hon_7()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An", "88/1 Dao Duy Anh", "0708339999", "thienan@gmail.com", "Trum cuoi", 6);
+            string expected = "Độ tuổi phải trong khoảng 7 đến 120";
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Test_Tuoi_Lon_Hon_120()
+        {
+            string actual = check_Update_emp.check_update_employee("Thien An", "88/1 Dao Duy Anh", "0708339999", "thienan@gmail.com", "Trum cuoi", 121);
+            string expected = "Độ tuổi phải trong khoảng 7 đến 120";
+            Assert.AreEqual(expected, actual);
+        }
+
+
 
 
     }
 
     [TestClass]
-    public class test_Finding
+    public class test_Finding_Book
     {
         [TestMethod]
         public void Test_Nhap_Dung_Thong_Tin_Tim_Kiem()
@@ -199,7 +276,7 @@ namespace TEST
             string txtbox = "S02";
             string actual = test_search.search_1(cbbox, txtbox);
 
-            string expected = "select*from tblSach where "+cbbox+" like " + "'%"+txtbox+"%'";
+            string expected = "select*from tblSach where " + cbbox + " like " + "'%" + txtbox + "%'";
             Assert.AreEqual(expected, actual);
         }
 
@@ -301,7 +378,23 @@ namespace TEST
         }//1919 2119
     }
 
+    [TestClass]
+    public class test_Finding_KH
+    {
+        [TestMethod]
+        public void Test_Nhap_Dung_Thong_Tin_Tim_Kiem()
+        {
+            Search test_search = new Search();
+            string cbbox = "MASACH";
+            string txtbox = "S02";
+            string actual = test_search.search_1(cbbox, txtbox);
 
+            string expected = "select*from tblSach where " + cbbox + " like " + "'%" + txtbox + "%'";
+            Assert.AreEqual(expected, actual);
+        }
 
-
+    }
 }
+
+   
+        
