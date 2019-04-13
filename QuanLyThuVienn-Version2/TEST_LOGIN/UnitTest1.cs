@@ -394,6 +394,145 @@ namespace TEST
         }
 
     }
+
+    [TestClass]
+    public class test_chinhsua_xoa_nhanvien
+    {
+        [TestMethod]
+        public void Test_Nhap_Dung_Thong_Tin_Chinh_Sua()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin","Le Quyen","123456","user","111 LVS","Nhan vien thu ngan",22,"0123833999");
+            string actual = "0";
+            
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_De_Trong_Ten_NV()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "", "123456", "user", "111 LVS", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "Không được để trống tên nhân viên";
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Test_De_Trong_Ten_NV_2()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "a", "123456", "user", "111 LVS", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "0";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_De_Trong_MK()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "", "user", "111 LVS", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "Không được để trống mật khẩu";
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Test_De_Trong_MK_2()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "1", "user", "111 LVS", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "Mật khẩu ít nhất phải có 6 kí tự";
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Test_Mat_Khau_Ngan()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "12345", "user", "111 LVS", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "Mật khẩu ít nhất phải có 6 kí tự";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Quyen_User_Khong_Duoc_Chinh_Sua()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("user", "Le Quyen", "123456", "user", "111 LVS", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "Bạn không có quyền chỉnh sửa và xóa";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_De_Trong_Quyen_Han()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "", "111 LVS", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "Không được để trống quyền hạn";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_De_Trong_Dia_Chi()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "user", "", "Nhan vien thu ngan", 22, "0123833999");
+            string actual = "Không được để trống địa chỉ";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_De_Trong_Chuc_Vu()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "user", "111 LVS", "", 22, "0123833999");
+            string actual = "Không được để trống chức vụ";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+       
+        [TestMethod]
+        [ExpectedException(typeof(System.FormatException), "Input string was not in a correct format.")]
+        public void Test_Nhap_Ki_Tu_Khong_Phai_So_Cho_Tuoi()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "user", "111 LVS", "Nhan vien thu ngan", int.Parse("aa"), "0123833999");
+        }
+
+        [TestMethod]
+        public void Test_Nhap_Tuoi_Sai()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "user", "111 LVS", "Nhan vien thu ngan", 6, "0123833999");
+            string actual = "Độ tuổi phải trong khoảng 7 đến 120";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Nhap_Tuoi_Sai_2()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "user", "111 LVS", "Nhan vien thu ngan", 121, "0123833999");
+            string actual = "Độ tuổi phải trong khoảng 7 đến 120";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Nhap_Sai_SDT()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "user", "111 LVS", "Nhan vien thu ngan", 22, "012383399");
+            string actual = "Số điện thoại phải có 10 số";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Nhap_Sai_SDT_2()
+        {
+            string expected = checkThongTinNhanVien.check_update_emp("admin", "Le Quyen", "123456", "user", "111 LVS", "Nhan vien thu ngan", 22, "01238339911");
+            string actual = "Số điện thoại phải có 10 số";
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+
+    }
 }
 
    
