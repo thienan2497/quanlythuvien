@@ -102,7 +102,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 202);
+            this.textBox2.Location = new System.Drawing.Point(171, 207);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(489, 22);
@@ -111,7 +111,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 161);
+            this.textBox1.Location = new System.Drawing.Point(171, 171);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(489, 22);
@@ -139,7 +139,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(171, 128);
+            this.txtEmail.Location = new System.Drawing.Point(171, 135);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(489, 22);
@@ -147,7 +147,7 @@
             // 
             // txtSoDienThoai
             // 
-            this.txtSoDienThoai.Location = new System.Drawing.Point(171, 91);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(171, 99);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(489, 22);
@@ -156,7 +156,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(171, 55);
+            this.txtDiaChi.Location = new System.Drawing.Point(171, 63);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(489, 22);
@@ -164,7 +164,7 @@
             // 
             // txtNHANVIEN
             // 
-            this.txtNHANVIEN.Location = new System.Drawing.Point(171, 23);
+            this.txtNHANVIEN.Location = new System.Drawing.Point(171, 27);
             this.txtNHANVIEN.Margin = new System.Windows.Forms.Padding(4);
             this.txtNHANVIEN.Name = "txtNHANVIEN";
             this.txtNHANVIEN.Size = new System.Drawing.Size(489, 22);
