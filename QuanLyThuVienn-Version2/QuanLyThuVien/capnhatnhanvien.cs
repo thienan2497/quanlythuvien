@@ -24,7 +24,8 @@ namespace QuanLyThuVien
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (check_Update_emp.check_update_employee(txtNHANVIEN.Text, txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, textBox1.Text, textBox2.Text) == "0")
+            var tuoi_n = int.Parse(textBox2.Text);
+            if (check_Update_emp.check_update_employee(txtNHANVIEN.Text, txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, textBox1.Text, tuoi_n) == "0")
             {
                 if (txtSoDienThoai.Text.Length - 1 <= 0)
                     MessageBox.Show("Số điện thoại không thể nhỏ hơn 0 số");
@@ -39,7 +40,7 @@ namespace QuanLyThuVien
                 cls.LoadData2DataGridView(dataGridView1, "select * from tblNhanVien where TAIKHOAN='" + Main.TenDN + "'");
                 MessageBox.Show("Sửa thành công");
             }
-            else MessageBox.Show(check_Update_emp.check_update_employee(txtNHANVIEN.Text, txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, textBox1.Text, textBox2.Text));
+            else MessageBox.Show(check_Update_emp.check_update_employee(txtNHANVIEN.Text, txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, textBox1.Text, tuoi_n));
 
 
 
