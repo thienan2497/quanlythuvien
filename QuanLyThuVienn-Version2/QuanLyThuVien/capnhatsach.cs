@@ -39,7 +39,7 @@ namespace QuanLyThuVien
             {
                 string strInsert = "Insert Into tblSach(MASACH,TENSACH,MATG,MANXB,MALv,NAMXB,SOTRANG,SOLUONG,NGAYNHAP,GHICHU,SOSACHHONG) values ('" + txtMASACH.Text + "','" + txtTENSACH.Text + "','" + cboMATG.Text + "','" + cboMANXB.Text + "','" + cboMALv.Text + "','" + txtNAMXB.Text + "','" + txtSOTRANG.Text + "','" + txtSOLUONG.Text + "','" + maskedTextBox1.Text + "','" + richTextBox1.Text + "','" + txtsachhong.Text + "')";
                 cls.ThucThiSQLTheoPKN(strInsert);
-                cls.LoadData2DataGridView(dataGridView1, "select *from tblSach");
+                cls.LoadData2DataGridView(dataGridView1, "select * from tblSach");
             }
             catch { MessageBox.Show("Trùng mã"); };
         }
@@ -59,7 +59,7 @@ namespace QuanLyThuVien
             {
                 string strUpdate = "Update tblSach set MASACH='" + txtMASACH.Text + "',TENSACH='" + txtTENSACH.Text + "',MATG='" + cboMATG.Text + "',MANXB='" + cboMANXB.Text + "',MaLv='" + cboMALv.Text + "',NAMXB='" + txtNAMXB.Text + "',SOTRANG='" + txtSOTRANG.Text + "',SOLUONG='" + txtSOLUONG.Text + "',NGAYNHAP='" + maskedTextBox1.Text + "',GHICHU='" + richTextBox1.Text + "',SOSACHHONG='" + txtsachhong.Text + "' where MASACH='" + masach + "'";
                 cls.ThucThiSQLTheoPKN(strUpdate);
-                cls.LoadData2DataGridView(dataGridView1, "select *from tblSach");
+                cls.LoadData2DataGridView(dataGridView1, "select * from tblSach");
                 button1.Enabled = true;
                 button3.Enabled = true;
                 dem = 0;

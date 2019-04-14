@@ -19,14 +19,17 @@ namespace QuanLyThuVien
         private void muon_Load(object sender, EventArgs e)
         {
             cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
-           // cls.LoadData2Combobox(comboBox1,"Select MASACH from tblSach");
-            
+            cls.LoadData2Combobox(cboMADG, "select MADG from tblDocGia");
+            cls.LoadData2Combobox(cboMaSach, "select MASACH from tblSach");
+
+            // cls.LoadData2Combobox(comboBox1,"Select MASACH from tblSach");
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
             //try
             //{
-                string strInsert = "Insert Into tblMuon(MADG,MASACH,SOPHIEUMUON,NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU) values ('" + txtMADG.Text + "','" + txtMASACH.Text + "','" + txtSOPHIEU.Text + "','" + mktNGAYMUON.Text + "','" + mktNGAYTRA.Text + "','" + cboXACNHAN.Text + "','" + rtbGHICHU.Text + "')";
+                string strInsert = "Insert Into tblMuon(MADG,MASACH,SOPHIEUMUON,NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU) values ('" + cboMADG.Text + "','" + cboMaSach.Text + "','" + txtSOPHIEU.Text + "','" + mktNGAYMUON.Text + "','" + mktNGAYTRA.Text + "','" + cboXACNHAN.Text + "','" + rtbGHICHU.Text + "')";
                 cls.ThucThiSQLTheoPKN(strInsert);
                 cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
                 MessageBox.Show("Thêm thành công");
@@ -38,7 +41,7 @@ namespace QuanLyThuVien
         {
             if (MessageBox.Show("Bạn có muốn xóa không?(Y/N)", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string strDelete = "Delete from tblMuon where MADG='" + txtMADG.Text + "'";
+                string strDelete = "Delete from tblMuon where MADG='" + cboMADG.Text + "'";
                 cls.ThucThiSQLTheoKetNoi(strDelete);
                 cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
                 MessageBox.Show("Xóa thành công !!!");
@@ -49,8 +52,8 @@ namespace QuanLyThuVien
         {
             try
             {
-                txtMADG.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtMASACH.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cboMADG.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                cboMaSach.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtSOPHIEU.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 mktNGAYMUON.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 mktNGAYTRA.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -66,7 +69,7 @@ namespace QuanLyThuVien
             
                 if (dem == 0)
                 {
-                    madg = txtMADG.Text;
+                    madg = cboMADG.Text;
                     dem = 1;
                     button1.Enabled = false;
                     button3.Enabled = false;
@@ -75,7 +78,7 @@ namespace QuanLyThuVien
                 {
                     try
                     {
-                        string strUpdate = "Update tblMuon set MADG='" + txtMADG.Text + "',MASACH='" + txtMASACH.Text + "',SOPHIEUMUON='" + txtSOPHIEU.Text + "',NGAYMUON='" + mktNGAYMUON.Text + "',NGAYTRA='" + mktNGAYTRA.Text + "',XACNHANTRA='" + cboXACNHAN.Text + "',GHICHU='" + rtbGHICHU.Text + "' where MADG='" + madg + "'";
+                        string strUpdate = "Update tblMuon set MADG='" + cboMADG.Text + "',MASACH='" + cboMaSach.Text + "',SOPHIEUMUON='" + txtSOPHIEU.Text + "',NGAYMUON='" + mktNGAYMUON.Text + "',NGAYTRA='" + mktNGAYTRA.Text + "',XACNHANTRA='" + cboXACNHAN.Text + "',GHICHU='" + rtbGHICHU.Text + "' where MADG='" + madg + "'";
                         cls.ThucThiSQLTheoPKN(strUpdate);
                         cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
                         button1.Enabled = true;

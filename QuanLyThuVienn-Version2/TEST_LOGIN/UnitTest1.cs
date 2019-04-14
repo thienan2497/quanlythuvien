@@ -379,7 +379,7 @@ namespace TEST
     }
 
     [TestClass]
-    public class test_Finding_KH
+    public class test_Finding_DG
     {
         [TestMethod]
         public void Test_Nhap_Dung_Thong_Tin_Tim_Kiem()
