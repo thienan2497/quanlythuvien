@@ -35,6 +35,7 @@ namespace QuanLyThuVien
         {
             TenDN = txtTenDangNhap.Text;
             MatKhau = txtMatKhau.Text;
+            
 
            
             string kt = checkKiemTraDangNhap.ktdangnhap(TenDN, MatKhau);

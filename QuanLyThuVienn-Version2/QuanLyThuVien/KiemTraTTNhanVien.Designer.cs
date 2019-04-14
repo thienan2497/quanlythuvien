@@ -233,7 +233,6 @@
             this.txtTuoi.Name = "txtTuoi";
             this.txtTuoi.Size = new System.Drawing.Size(396, 22);
             this.txtTuoi.TabIndex = 17;
-//            this.txtTuoi.TextChanged += new System.EventHandler(this.txtTuoi_TextChanged);
             this.txtTuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTuoi_KeyPress);
             // 
             // txtChucVu
@@ -287,6 +286,7 @@
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.Enabled = false;
             this.txtMatKhau.Location = new System.Drawing.Point(171, 46);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhau.Name = "txtMatKhau";
@@ -295,6 +295,7 @@
             // 
             // txtTenTaiKhoan
             // 
+            this.txtTenTaiKhoan.Enabled = false;
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(171, 11);
             this.txtTenTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";

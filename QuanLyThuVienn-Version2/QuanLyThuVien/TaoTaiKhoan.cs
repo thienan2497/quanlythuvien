@@ -24,7 +24,7 @@ namespace QuanLyThuVien
         private void button1_Click(object sender, EventArgs e)
         {
             string kt = checkTaoTaiKhoan.check_TaoTaiKhoan(txtTenTK.Text, txtMatKhau.Text, txtXNMatKhau.Text);
-            MessageBox.Show(kt);
+          
             if (kt == "Id too short")
                 MessageBox.Show("Tên tài khoản quá ngắn");
             else

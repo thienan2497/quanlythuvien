@@ -16,6 +16,7 @@ namespace QuanLyThuVien
             InitializeComponent();
         }
         Class.clsDatabase cls = new QuanLyThuVien.Class.clsDatabase();
+ 
         private void muon_Load(object sender, EventArgs e)
         {
             cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
@@ -28,14 +29,23 @@ namespace QuanLyThuVien
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string tam = " ";
             
-            string kt = checkThongTinMuon.check_ThongTinMuon(cboMADG.Text, cboMaSach.Text, txtSOPHIEU.Text, mktNGAYMUON.Text, mktNGAYTRA.Text, cboXACNHAN.Text, rtbGHICHU.Text);
-            
+            string kt = checkThongTinMuon.check_ThongTinMuon(cboMADG.Text, cboMaSach.Text, txtSOPHIEU.Text, mktNGAYMUON.Text, mktNGAYTRA.Text, cboXACNHAN.Text, rtbGHICHU.Text,mskTemp.Text);
+            if (cboXACNHAN.Text == "") { cboXACNHAN.Text = " "; };
+            if (rtbGHICHU.Text == "") { rtbGHICHU.Text = " "; };
+
+            if ((cboXACNHAN.Text == " ") && (mktNGAYTRA.Text == mskTemp.Text)) { tam = " "; }
+                    else if (mktNGAYTRA.Text != mskTemp.Text) { tam = mktNGAYTRA.Text; }
+
+
             if (kt == "0")
             {
                 try
                 {
-                    string strInsert = "Insert Into tblMuon(MADG,MASACH,SOPHIEUMUON,NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU) values ('" + cboMADG.Text + "','" + cboMaSach.Text + "','" + txtSOPHIEU.Text + "','" + mktNGAYMUON.Text + "','" + mktNGAYTRA.Text + "','" + cboXACNHAN.Text + "','" + rtbGHICHU.Text + "')";
+                    
+                    string strInsert = "Insert Into tblMuon(MADG,MASACH,SOPHIEUMUON,NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU) values ('" + cboMADG.Text + "','" + cboMaSach.Text + "','" + txtSOPHIEU.Text + "','" + mktNGAYMUON.Text + "','" + tam + "','" + cboXACNHAN.Text + "','" + rtbGHICHU.Text + "')";
+                    MessageBox.Show(strInsert);
                     cls.ThucThiSQLTheoPKN(strInsert);
                     cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
                     MessageBox.Show("Thêm thành công");

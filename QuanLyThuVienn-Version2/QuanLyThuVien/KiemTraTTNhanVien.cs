@@ -51,7 +51,7 @@ namespace QuanLyThuVien
                 try
                 {
                     var tuoi_n = int.Parse(txtTuoi.Text);
-                    string kt = checkThongTinNhanVien.check_update_emp(txtQuyenHan.Text,txtTenNhanVien.Text, txtMatKhau.Text, txtQuyenHan.Text, txtDiaChi.Text, txtChucVu.Text, tuoi_n, txtDienThoai.Text);
+                    string kt = checkThongTinNhanVien.check_update_emp(Main.Quyen,txtTenNhanVien.Text, txtMatKhau.Text, txtQuyenHan.Text, txtDiaChi.Text, txtChucVu.Text, tuoi_n, txtDienThoai.Text);
                     button2.Enabled = true;
                     if (kt == "0")
                     {

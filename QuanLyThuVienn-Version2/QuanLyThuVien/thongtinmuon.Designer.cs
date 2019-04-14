@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboMaSach = new System.Windows.Forms.ComboBox();
+            this.cboMADG = new System.Windows.Forms.ComboBox();
             this.rtbGHICHU = new System.Windows.Forms.RichTextBox();
             this.cboXACNHAN = new System.Windows.Forms.ComboBox();
             this.txtSOPHIEU = new System.Windows.Forms.TextBox();
@@ -55,8 +57,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cboMADG = new System.Windows.Forms.ComboBox();
-            this.cboMaSach = new System.Windows.Forms.ComboBox();
+            this.mskTemp = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mskTemp);
             this.groupBox1.Controls.Add(this.cboMaSach);
             this.groupBox1.Controls.Add(this.cboMADG);
             this.groupBox1.Controls.Add(this.rtbGHICHU);
@@ -91,18 +93,36 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(11, 82);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(800, 192);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập đầy đủ các thông tin";
             // 
+            // cboMaSach
+            // 
+            this.cboMaSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaSach.FormattingEnabled = true;
+            this.cboMaSach.Location = new System.Drawing.Point(143, 52);
+            this.cboMaSach.Name = "cboMaSach";
+            this.cboMaSach.Size = new System.Drawing.Size(247, 24);
+            this.cboMaSach.TabIndex = 18;
+            // 
+            // cboMADG
+            // 
+            this.cboMADG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMADG.FormattingEnabled = true;
+            this.cboMADG.Location = new System.Drawing.Point(143, 20);
+            this.cboMADG.Name = "cboMADG";
+            this.cboMADG.Size = new System.Drawing.Size(247, 24);
+            this.cboMADG.TabIndex = 17;
+            // 
             // rtbGHICHU
             // 
             this.rtbGHICHU.Location = new System.Drawing.Point(543, 52);
-            this.rtbGHICHU.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbGHICHU.Margin = new System.Windows.Forms.Padding(4);
             this.rtbGHICHU.Name = "rtbGHICHU";
             this.rtbGHICHU.Size = new System.Drawing.Size(245, 111);
             this.rtbGHICHU.TabIndex = 16;
@@ -115,7 +135,7 @@
             "Da Tra",
             "Chua Tra"});
             this.cboXACNHAN.Location = new System.Drawing.Point(543, 20);
-            this.cboXACNHAN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboXACNHAN.Margin = new System.Windows.Forms.Padding(4);
             this.cboXACNHAN.Name = "cboXACNHAN";
             this.cboXACNHAN.Size = new System.Drawing.Size(245, 24);
             this.cboXACNHAN.TabIndex = 15;
@@ -123,7 +143,7 @@
             // txtSOPHIEU
             // 
             this.txtSOPHIEU.Location = new System.Drawing.Point(143, 81);
-            this.txtSOPHIEU.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSOPHIEU.Margin = new System.Windows.Forms.Padding(4);
             this.txtSOPHIEU.Name = "txtSOPHIEU";
             this.txtSOPHIEU.Size = new System.Drawing.Size(247, 22);
             this.txtSOPHIEU.TabIndex = 12;
@@ -131,7 +151,7 @@
             // mktNGAYTRA
             // 
             this.mktNGAYTRA.Location = new System.Drawing.Point(143, 140);
-            this.mktNGAYTRA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mktNGAYTRA.Margin = new System.Windows.Forms.Padding(4);
             this.mktNGAYTRA.Mask = "00/00/0000";
             this.mktNGAYTRA.Name = "mktNGAYTRA";
             this.mktNGAYTRA.Size = new System.Drawing.Size(247, 22);
@@ -141,7 +161,7 @@
             // mktNGAYMUON
             // 
             this.mktNGAYMUON.Location = new System.Drawing.Point(143, 111);
-            this.mktNGAYMUON.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mktNGAYMUON.Margin = new System.Windows.Forms.Padding(4);
             this.mktNGAYMUON.Mask = "00/00/0000";
             this.mktNGAYMUON.Name = "mktNGAYMUON";
             this.mktNGAYMUON.Size = new System.Drawing.Size(247, 22);
@@ -221,7 +241,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(53, 151);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 26);
             this.button3.TabIndex = 26;
@@ -232,7 +252,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(53, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 26);
             this.button1.TabIndex = 24;
@@ -243,7 +263,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(53, 92);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 26);
             this.button2.TabIndex = 25;
@@ -264,7 +284,7 @@
             this.Column6,
             this.Column7});
             this.dataGridView1.Location = new System.Drawing.Point(11, 283);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1024, 347);
             this.dataGridView1.TabIndex = 2;
@@ -317,9 +337,9 @@
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 9);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1024, 64);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -331,31 +351,23 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Location = new System.Drawing.Point(821, 82);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(213, 192);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức năng";
             // 
-            // cboMADG
+            // mskTemp
             // 
-            this.cboMADG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMADG.FormattingEnabled = true;
-            this.cboMADG.Location = new System.Drawing.Point(143, 20);
-            this.cboMADG.Name = "cboMADG";
-            this.cboMADG.Size = new System.Drawing.Size(247, 24);
-            this.cboMADG.TabIndex = 17;
-            // 
-            // cboMaSach
-            // 
-            this.cboMaSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaSach.FormattingEnabled = true;
-            this.cboMaSach.Location = new System.Drawing.Point(143, 52);
-            this.cboMaSach.Name = "cboMaSach";
-            this.cboMaSach.Size = new System.Drawing.Size(247, 24);
-            this.cboMaSach.TabIndex = 18;
+            this.mskTemp.Location = new System.Drawing.Point(143, 163);
+            this.mskTemp.Mask = "00/00/0000";
+            this.mskTemp.Name = "mskTemp";
+            this.mskTemp.Size = new System.Drawing.Size(100, 22);
+            this.mskTemp.TabIndex = 19;
+            this.mskTemp.ValidatingType = typeof(System.DateTime);
+            this.mskTemp.Visible = false;
             // 
             // thongtinmuon
             // 
@@ -366,7 +378,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "thongtinmuon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin mượn-trả sách";
@@ -412,5 +424,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cboMADG;
         private System.Windows.Forms.ComboBox cboMaSach;
+        private System.Windows.Forms.MaskedTextBox mskTemp;
     }
 }

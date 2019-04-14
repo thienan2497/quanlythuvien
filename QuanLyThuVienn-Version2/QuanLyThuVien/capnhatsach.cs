@@ -17,6 +17,7 @@ namespace QuanLyThuVien
         }
         Class.clsDatabase cls = new QuanLyThuVien.Class.clsDatabase();
         
+        
         private void capnhatsach_Load(object sender, EventArgs e)
         {
             cls.LoadData2DataGridView(dataGridView1, "select *from tblSach");
@@ -26,6 +27,7 @@ namespace QuanLyThuVien
             cls.LoadData2Combobox(cbotenLV, "select TenLv from tblLinhVuc");
             cls.LoadData2Combobox(cbotenTG,"Select TENTG from tblTacGia");
             cls.LoadData2Combobox(cbotenNXB,"Select TENNXB from tblNXB");
+            
             //txtMASACH = txtTENSACH = cboMANXB.Text = cboMANXB.Text = cboMALv.Text = txtNAMXB = txtSOTRANG = txtSOLUONG = maskedTextBox1 = richTextBox1 = txtsachhong.Text = "ac";
             //txtMASACH.Text = txtTENSACH.Text = cboMANXB.Text = cboMANXB.Text = cboMALv.Text = txtNAMXB.Text = txtSOTRANG.Text = txtSOLUONG.Text = maskedTextBox1.Text = txtsachhong.Text = "";
         }
