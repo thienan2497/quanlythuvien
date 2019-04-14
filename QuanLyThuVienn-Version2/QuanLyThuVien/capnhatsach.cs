@@ -32,16 +32,22 @@ namespace QuanLyThuVien
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //string kt = checkInsertandUpdateBook.check_insertBook(txtMASACH.Text, txtTENSACH.Text, cboMATG.Text, cboMANXB.Text, cboMALv.Text, txtNAMXB.Text, txtSOTRANG.Text, txtSOLUONG.Text, maskedTextBox1.Text, richTextBox1.Text, txtsachhong.Text);
+            var soluong = int.Parse(txtSOLUONG.Text);
+            var sosachhong = int.Parse(txtsachhong.Text);
 
-            //MessageBox.Show(kt);
-            try
+            string kt = checkInsertandUpdateBook.check_insertBook(txtMASACH.Text, txtTENSACH.Text, cboMATG.Text, cboMANXB.Text, cboMALv.Text, txtNAMXB.Text, txtSOTRANG.Text, soluong, maskedTextBox1.Text, richTextBox1.Text, sosachhong);
+
+            MessageBox.Show(kt);
+            if (kt == "0")
             {
-                string strInsert = "Insert Into tblSach(MASACH,TENSACH,MATG,MANXB,MALv,NAMXB,SOTRANG,SOLUONG,NGAYNHAP,GHICHU,SOSACHHONG) values ('" + txtMASACH.Text + "','" + txtTENSACH.Text + "','" + cboMATG.Text + "','" + cboMANXB.Text + "','" + cboMALv.Text + "','" + txtNAMXB.Text + "','" + txtSOTRANG.Text + "','" + txtSOLUONG.Text + "','" + maskedTextBox1.Text + "','" + richTextBox1.Text + "','" + txtsachhong.Text + "')";
-                cls.ThucThiSQLTheoPKN(strInsert);
-                cls.LoadData2DataGridView(dataGridView1, "select * from tblSach");
+                try
+                {
+                    string strInsert = "Insert Into tblSach(MASACH,TENSACH,MATG,MANXB,MALv,NAMXB,SOTRANG,SOLUONG,NGAYNHAP,GHICHU,SOSACHHONG) values ('" + txtMASACH.Text + "','" + txtTENSACH.Text + "','" + cboMATG.Text + "','" + cboMANXB.Text + "','" + cboMALv.Text + "','" + txtNAMXB.Text + "','" + txtSOTRANG.Text + "','" + txtSOLUONG.Text + "','" + maskedTextBox1.Text + "','" + richTextBox1.Text + "','" + txtsachhong.Text + "')";
+                    cls.ThucThiSQLTheoPKN(strInsert);
+                    cls.LoadData2DataGridView(dataGridView1, "select * from tblSach");
+                }
+                catch { MessageBox.Show("Trùng mã"); };
             }
-            catch { MessageBox.Show("Trùng mã"); };
         }
 
         int dem = 0;
@@ -99,9 +105,7 @@ namespace QuanLyThuVien
 
         private void txtsachhong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= '0' && e.KeyChar <= '9')
-                e.Handled = false;
-            else
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
 
@@ -135,5 +139,24 @@ namespace QuanLyThuVien
             cbotenNXB.SelectedIndex = cboMANXB.SelectedIndex;
         }
 
+        private void txtNAMXB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtSOTRANG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtSOLUONG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        
     }
 }
