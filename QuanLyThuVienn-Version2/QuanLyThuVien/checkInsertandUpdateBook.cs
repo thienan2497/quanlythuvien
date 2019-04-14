@@ -11,7 +11,7 @@ namespace QuanLyThuVien
     {
         public static string check_insertBook(string masach, string tensach, string matg, string manxb, string malv, string namxb, string sotrang, int soluong, string ngaynhap, string ghichu, int sosachhong)
         {
-            if ((masach.Length != 6) && (masach.Substring(0) != "S"))
+            if ((masach.Length != 6) || (masach.Substring(0) != "S"))
             { return ("Mã sách phải gồm 6 kí tự và bắt đầu bằng S"); }
             else if (tensach.Length == 0)
             { return ("Bạn phải nhập tên sách"); }

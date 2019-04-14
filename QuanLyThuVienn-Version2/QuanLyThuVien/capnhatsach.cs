@@ -37,7 +37,7 @@ namespace QuanLyThuVien
 
             string kt = checkInsertandUpdateBook.check_insertBook(txtMASACH.Text, txtTENSACH.Text, cboMATG.Text, cboMANXB.Text, cboMALv.Text, txtNAMXB.Text, txtSOTRANG.Text, soluong, maskedTextBox1.Text, richTextBox1.Text, sosachhong);
 
-            MessageBox.Show(kt);
+            
             if (kt == "0")
             {
                 try
@@ -48,6 +48,7 @@ namespace QuanLyThuVien
                 }
                 catch { MessageBox.Show("Trùng mã"); };
             }
+            else MessageBox.Show(kt);
         }
 
         int dem = 0;

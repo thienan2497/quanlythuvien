@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="checkInsertandUpdateBook.cs" />
     <Compile Include="checkTaoTaiKhoan.cs" />
+    <Compile Include="checkThongTinMuon.cs" />
     <Compile Include="checkThongTinNhanVien.cs" />
     <Compile Include="check_Update_emp.cs" />
     <Compile Include="Class\clsDatabase.cs" />

@@ -25,14 +25,24 @@ namespace QuanLyThuVien
             // cls.LoadData2Combobox(comboBox1,"Select MASACH from tblSach");
 
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-                string strInsert = "Insert Into tblMuon(MADG,MASACH,SOPHIEUMUON,NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU) values ('" + cboMADG.Text + "','" + cboMaSach.Text + "','" + txtSOPHIEU.Text + "','" + mktNGAYMUON.Text + "','" + mktNGAYTRA.Text + "','" + cboXACNHAN.Text + "','" + rtbGHICHU.Text + "')";
-                cls.ThucThiSQLTheoPKN(strInsert);
-                cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
-                MessageBox.Show("Thêm thành công");
+            
+            string kt = checkThongTinMuon.check_ThongTinMuon(cboMADG.Text, cboMaSach.Text, txtSOPHIEU.Text, mktNGAYMUON.Text, mktNGAYTRA.Text, cboXACNHAN.Text, rtbGHICHU.Text);
+            
+            if (kt == "0")
+            {
+                try
+                {
+                    string strInsert = "Insert Into tblMuon(MADG,MASACH,SOPHIEUMUON,NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU) values ('" + cboMADG.Text + "','" + cboMaSach.Text + "','" + txtSOPHIEU.Text + "','" + mktNGAYMUON.Text + "','" + mktNGAYTRA.Text + "','" + cboXACNHAN.Text + "','" + rtbGHICHU.Text + "')";
+                    cls.ThucThiSQLTheoPKN(strInsert);
+                    cls.LoadData2DataGridView(dataGridView1, "select *from tblMuon");
+                    MessageBox.Show("Thêm thành công");
+                }
+                catch { MessageBox.Show("Trùng mã phiếu mượn"); };
+            }
+            else MessageBox.Show(kt);
             //}
             //catch { MessageBox.Show("Trùng Mã"); };
         }
