@@ -534,7 +534,7 @@ namespace TEST
         {
             string expected = checkThongTinNhanVien.check_delete_emp("admin", "an");
             string actual = "0";
-
+                
             Assert.AreEqual(expected, actual);
         }
 

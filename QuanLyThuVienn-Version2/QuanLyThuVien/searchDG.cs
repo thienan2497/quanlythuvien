@@ -14,79 +14,68 @@ namespace QuanLyThuVien
 
             string d;
             d = "select * from tblSach";
-            if (cbbox == "TENSACH")
+            if (cbbox == "MADG")
             {
-                if (txtbox.Length - 1 > 50)
+                if (txtbox.Length > 10)
                 {
-                    return "Tên sách quá dài";
+                    return "Mã độc giả quá dài";
                 }
                 else
                 {
-                    d = "select*from tblSach where TENSACH like '%" + txtbox + "%'";
+                    d = "select*from tblDocGia where MADG like '%" + txtbox + "%'";
                 }
 
             }
-            if (cbbox == "MASACH")
+            else if (cbbox == "HOTEN")
             {
-                if (txtbox.Length - 1 > 50)
+                if (txtbox.Length > 50)
                 {
-                    return "Mã sách quá dài";
+                    return "Tên độc giả quá dài";
                 }
                 else
                 {
-                    d = "select*from tblSach where MASACH like '%" + txtbox + "%'";
+                    d = "select*from tblDocGia where HOTEN like '%" + txtbox + "%'";
                 }
 
             }
-            else if (cbbox == "MATG")
+            else if (cbbox == "GIOITINH")
             {
-                if (txtbox.Length - 1 > 30)
+                if (txtbox.Length > 3)
                 {
-                    return "Tên tác giả quá dài";
+                    return "Giới tính bị sai";
                 }
                 else
                 {
-                    d = "select*from tblSach where MATG LIKE '%" + txtbox + "%'";
+                    d = "select*from tblDocGia where GIOITINH like '%" + txtbox + "%'";
                 }
 
             }
-            else if (cbbox == "MANXB")
+            else if (cbbox == "LOP")
             {
-                if (txtbox.Length - 1 > 30)
+                if (txtbox.Length > 10)
                 {
-                    return "Mã NXB hoặc tên NXB quá dài";
+                    return "Lớp quá dài";
                 }
                 else
                 {
-                    d = "select*from tblSach where MANXB like '%" + txtbox + "%'";
+                    d = "select*from tblDocGia where LOP like '%" + txtbox + "%'";
                 }
-            }
-            else if (cbbox == "MaLv")
-            {
-                if (txtbox.Length - 1 > 10)
-                {
-                    return "Mã lĩnh vực quá dài";
-                }
-                else
-                {
-                    d = "select*from tblSach where MaLv like '%" + txtbox + "%'";
-                }
-            }
-            else if (cbbox == "NAMXB")
-            {
-                CheckDate date = new CheckDate();
-                if (date.Check_Year(txtbox) == "Năm không hợp lệ")
-                {
-                    MessageBox.Show("Năm không hợp lệ");
-                    return "select * from tblSach";
-                }
-                else
-                {
-                    d = "select*from tblSach where " + cbbox + " like '%" + date.Check_Year(txtbox) + "%'";
-                }
+
             }
 
-            else if (cbbox == "NGAYNHAP")
+            else if (cbbox == "DIACHI")
+            {
+                if (txtbox.Length > 200)
+                {
+                    return "Địa chỉ quá dài";
+                }
+                else
+                {
+                    d = "select*from tblDocGia where DIACHI like '%" + txtbox + "%'";
+                }
+
+            }
+            else if (cbbox == "NGAYSINH")
             {
                 CheckDate date = new CheckDate();
                 if (date.Check_Date(txtbox) == "Ngày không hợp lệ")
@@ -96,10 +85,14 @@ namespace QuanLyThuVien
                 }
                 else
                 {
-                    d = "select*from tblSach where " + cbbox + " like '%" + date.Check_Date(txtbox) + "%'";
+                    d = "select*from tblDocGia where " + cbbox + " like '%" + date.Check_Date(txtbox) + "%'";
                 }
             }
-            return d;
+            return d; 
         }
+            
+
+
+        
     }
 }
