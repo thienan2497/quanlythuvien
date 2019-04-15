@@ -13,7 +13,7 @@ namespace QuanLyThuVien
         {
 
             string d;
-            d = "select * from tblSach";
+            d = "select * from tblDocGia";
             if (cbbox == "MADG")
             {
                 if (txtbox.Length > 10)

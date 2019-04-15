@@ -23,7 +23,26 @@ namespace QuanLyThuVien
 
             else return "0";
         }
-            
+
+        public static string check_db_ThongTinMuon(string madg, string masach, string sophieumuon, string ngaymuon, string ngaytra, string xacnhan, string ghichu, string temp)
+        {
+            try
+            {
+                Class.clsDatabase cls = new QuanLyThuVien.Class.clsDatabase();
+
+
+                string strInsert = "Insert Into tblMuon(MADG,MASACH,SOPHIEUMUON,NGAYMUON,NGAYTRA,XACNHANTRA,GHICHU) values ('" + madg + "','" + masach + "','" + sophieumuon + "','" + ngaymuon + "','" + ngaytra + "','" + xacnhan + "','" + ghichu + "')";
+                
+                cls.ThucThiSQLTheoPKN(strInsert);
+             
+                return "0";
+            }
+            catch { Exception ex;  return("Trùng mã phiếu mượn"); };
+        }
+
+
+
+
 
     }
 }

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace QuanLyThuVien.Class
 {
-    class clsDatabase
+    public class clsDatabase
     {
         //Khai báo các chuỗi kết nối và các đối tượng
         string strConnect = @"Data Source=DESKTOP-EB0DIJU\SQLEXPRESS2;Initial Catalog=Library;Integrated Security=True";
@@ -30,7 +30,7 @@ namespace QuanLyThuVien.Class
         }
 
         //Phương thức đóng kết nối tới CSDL
-        private void NgatKetNoi()
+        public void NgatKetNoi()
         {
             if (sqlCon.State == ConnectionState.Open)
             {

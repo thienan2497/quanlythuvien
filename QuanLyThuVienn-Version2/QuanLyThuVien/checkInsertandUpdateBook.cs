@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 
 namespace QuanLyThuVien
 {
@@ -11,7 +12,8 @@ namespace QuanLyThuVien
     {
         public static string check_insertBook(string masach, string tensach, string matg, string manxb, string malv, string namxb, string sotrang, int soluong, string ngaynhap, string ghichu, int sosachhong)
         {
-            if ((masach.Length != 6) || (masach.Substring(0) != "S"))
+            
+            if ((masach.Length != 6) || (masach.Substring(0,1) != "S"))
             { return ("Mã sách phải gồm 6 kí tự và bắt đầu bằng S"); }
             else if (tensach.Length == 0)
             { return ("Bạn phải nhập tên sách"); }
@@ -19,7 +21,7 @@ namespace QuanLyThuVien
             { return ("Tên sách quá dài"); }
             else if (namxb.Length == 0)
             { return ("Bạn phải nhập năm xuất bản"); }
-            else if (namxb.Length > 4)
+            else if (namxb.Length != 4)  
             { return ("Năm xuất bản không hợp lệ"); }
             else if (sosachhong > soluong)
             { return ("Số lượng sách hỏng không được lớn hơn số lượng sách nhập vào"); }
